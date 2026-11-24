@@ -167,7 +167,7 @@ h1.display .l2{display:block;color:var(--red-hot)}
 .daytile__hk{font-family:'Oswald',sans-serif;font-weight:600;color:#fff;font-size:max(7px,.084em);line-height:1;letter-spacing:.2em;text-indent:.2em;text-transform:uppercase}
 .daytile__strip{flex:none;height:.036em;background:var(--red-deep)}
 .daytile__body{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:0 .04em}
-.daytile__n{font-family:'Oswald',sans-serif;font-weight:600;color:#fff;font-size:max(8px,.088em);line-height:1.15;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:0 .06em}
+.daytile__n{font-family:'Oswald',sans-serif;font-weight:600;color:#fff;font-size:max(11px,.088em);line-height:1.15;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:0 .06em}
 /* ----- the upgrade tab: the broadcast banner, open or shut -----
    One shape in both states. Nothing here sizes in em off the button, so
    the clamps below are the only thing that moves with the viewport. */
@@ -399,9 +399,9 @@ h1.display .l2{display:block;color:var(--red-hot)}
 .pager__info b{color:var(--white)}
 .pager__dots{display:flex;gap:0}
 .pager__dots button{position:relative;width:24px;height:24px;background:none}
-.pager__dots button::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:rgba(255,255,255,.16);transition:background .2s,transform .2s}
+.pager__dots button::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .2s,transform .2s}
 .pager__dots button[aria-current="true"]::before{background:var(--red-hot);transform:scale(1.3)}
-.pager__dots button:hover::before{background:var(--muted)}
+.pager__dots button:hover::before{background:#fff}
 .shopall{margin-top:38px}
 
 /* ---------- video ---------- */
@@ -615,7 +615,8 @@ h1.display .l2{display:block;color:var(--red-hot)}
 /* phones only (up to 767px): bigger headline, stacked full-width buttons */
 @media(max-width:767px){
   h1.display{font-size:2.8rem}
-  .hero__actions{flex-direction:column-reverse}
+    /* stacked in DOM order, so the red primary button is first for keyboard users as well as on screen (WCAG 2.4.3) */
+  .hero__actions{flex-direction:column}
   .hero__actions .btn{width:100%}
   .shopall .btn,.bgrid + div .btn,.next__row .btn{width:100%}
   /* blogs: one swipeable row, each card 82% wide so the next one peeks in; bleeds over .wrap's 28px gutter */
@@ -652,6 +653,10 @@ h1.display .l2{display:block;color:var(--red-hot)}
   /* "See every part on the truck" spans the panel */
   .detail__cta .btn{width:100%}
 
+  /* category tiles: 72px on phones (4 fit in one row) so the labels can be 11px
+     instead of 8px. Their font-size is set to the tile width, so the em-based parts scale with it. */
+  .daytile{width:72px;font-size:72px}
+  .daytile__n{font-size:11px;letter-spacing:.04em;line-height:1.1}
   /* page gutter: 16px left and right on phones (28px above 767px; the parts list is 16px everywhere) */
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
   .nav__in,.stats__in{padding-left:16px;padding-right:16px}
