@@ -91,6 +91,16 @@ h1.display{text-shadow:0 3px 28px rgba(0,0,0,.55)}
 h1.display .l2{display:block;color:var(--red-hot)}
 .hero__sub{margin-top:18px;max-width:58ch;font-size:.97rem;color:#ffffff;text-shadow:0 1px 14px rgba(0,0,0,.8)}
 .hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+/* scroll cue: a pill at the foot of the hero whose chevron bobs continuously.
+   Off for reduced motion. Hidden on phones, where the hero buttons fill the foot. */
+.hero__scrollwrap{position:absolute;left:50%;bottom:22px;z-index:3;transform:translateX(-50%);display:flex;align-items:center;gap:8px}
+.hero__scroll{height:48px;padding:0 18px 0 22px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(10,10,11,.55);color:#fff;display:flex;align-items:center;gap:10px;text-decoration:none;transition:border-color .2s,background .2s}
+.hero__scroll-t{font-family:'Oswald',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;line-height:1}
+.hero__scroll:hover{border-color:var(--red);background:rgba(206,17,38,.25)}
+.hero__scroll svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;animation:heroBob 1.2s ease-in-out infinite}
+@keyframes heroBob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media(max-width:767px){.hero__scrollwrap{display:none}}
+@media(prefers-reduced-motion:reduce){.hero__scroll svg{animation:none}}
 
 
 /* ============================================================
