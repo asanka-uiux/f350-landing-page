@@ -11,7 +11,18 @@ HOW TO REVIEW
    why you want it and who should skip it beside it. The square tabs either side
    switch categories, arrow keys work too.
 
-UPDATED 11/24 . LATEST ROUND
+UPDATED 11/24 . FEEDBACK ROUND (Trayc)
+The headlights card has a red View Product button above Shop Lighting, linking to the
+AlphaRex LUXX MKII product page with this truck's fitment already selected. Our site
+shows those headlights at $794.75 (marked down from $935.00); the card still says
+$935.00. View Package on the wheel and tire card now goes to the 2019 F-350 Super Duty
+wheels-tires page (the old link was an error page). In Lighting, only the headlights
+card has View Product, since it is the only lighting part with its own page on our
+site; the light bar and both fog pairs keep just Shop Lighting. The same goes for the
+Elevate rack, running boards, Phantom XL hitch step and seat covers: no product page
+on our site, so no View Product button, just the Shop button for their category.
+
+EARLIER ON 11/24
 The Lighting category lost the "Front & Rear" and is just LIGHTING now. The rear
 floor liner card has its real product shot. The Boss hitch turned out to be on our
 own site after all, 81968, at the same $979.95, so that card now links to our product
