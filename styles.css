@@ -646,7 +646,8 @@ h1.display .l2{display:block;color:var(--red-hot)}
   .detail__cta .btn{width:100%}
 
   /* page gutter: 16px left and right on phones (28px above 767px; the parts list is 16px everywhere) */
-  .wrap,.wrap--wide,.nav__in,.stats__in{padding-left:16px;padding-right:16px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+  .nav__in,.stats__in{padding-left:16px;padding-right:16px}
   /* swipe rows still run to the screen edges, so their bleed follows the 16px gutter */
   .ptabs{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}
   .bgrid{margin-inline:-16px;padding-left:16px;padding-right:16px;scroll-padding-inline:16px}
