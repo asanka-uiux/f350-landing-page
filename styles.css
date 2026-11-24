@@ -340,7 +340,7 @@ h1.display .l2{display:block;color:var(--red-hot)}
 .ptab{font-family:'Oswald',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:11px 18px;border:1px solid var(--line);border-radius:var(--r);color:var(--muted);transition:all .2s}
 .ptab:hover{color:#fff;border-color:var(--red)}
 .ptab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
-.wrap--wide{max-width:var(--wide);padding:0 34px}
+.wrap--wide{max-width:var(--wide);padding:0 16px}
 
 /* carousel: on phones the arrows sit in one row under the cards */
 .carousel{display:grid;grid-template-columns:1fr;gap:0;align-items:center;margin-top:34px}
@@ -645,7 +645,7 @@ h1.display .l2{display:block;color:var(--red-hot)}
   /* "See every part on the truck" spans the panel */
   .detail__cta .btn{width:100%}
 
-  /* page gutter: 16px left and right on phones (28px, and 34px on the parts list, above 767px) */
+  /* page gutter: 16px left and right on phones (28px above 767px; the parts list is 16px everywhere) */
   .wrap,.wrap--wide,.nav__in,.stats__in{padding-left:16px;padding-right:16px}
   /* swipe rows still run to the screen edges, so their bleed follows the 16px gutter */
   .ptabs{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}
