@@ -645,8 +645,16 @@ h1.display .l2{display:block;color:var(--red-hot)}
   /* "See every part on the truck" spans the panel */
   .detail__cta .btn{width:100%}
 
-  /* video: runs out to a 12px gutter instead of 28px */
-  .vidbox{margin-inline:-16px;margin-top:26px}
+  /* page gutter: 16px left and right on phones (28px, and 34px on the parts list, above 767px) */
+  .wrap,.wrap--wide,.nav__in,.stats__in{padding-left:16px;padding-right:16px}
+  /* swipe rows still run to the screen edges, so their bleed follows the 16px gutter */
+  .ptabs{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}
+  .bgrid{margin-inline:-16px;padding-left:16px;padding-right:16px;scroll-padding-inline:16px}
+  /* pre-qualify label on one line: 90px = 32px page gutters + 32px banner padding + 2px border + 24px button padding */
+  .finbanner__btn{font-size:min(.72rem,calc((100vw - 90px) / 22))}
+
+  /* video: runs out to a 12px gutter, 4px wider than the page gutter each side */
+  .vidbox{margin-inline:-4px;margin-top:26px}
 
   /* small labels: lift the 8-10px ones to ~11-12px */
   .stamp{font-size:.72rem}
