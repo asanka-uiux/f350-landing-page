@@ -20,7 +20,7 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- ===================== NAV ===================== -->
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <div class="nav__in">
     <a class="brand" href="#top"><img src="images/logo.png" alt="Custom Offsets"></a>
     <div class="nav__links">
@@ -146,6 +146,7 @@
 </section>
 
 <!-- ===================== FINANCING MODAL ===================== -->
+<button class="affirm-site-modal" type="button" data-page-type="marketplace" id="affirmTrigger" hidden tabindex="-1" aria-label="Open Affirm pre-qualification"></button>
 <div class="modal" id="finModal" role="dialog" aria-modal="true" aria-labelledby="finModalTitle">
   <div class="modal__scrim" data-close></div>
   <div class="modal__panel">
@@ -166,7 +167,7 @@
           and cooling parts on one approval. As low as 0% APR for qualified buyers, with predictable monthly payments and
           no late fees or hidden fees.
         </p>
-        <a class="btn btn--primary" href="https://www.customwheeloffset.com/" target="_blank" rel="noopener">Pre-qualify with Affirm</a>
+        <a class="btn btn--primary" href="https://www.customwheeloffset.com/financing" target="_blank" rel="noopener" data-lender="affirm">Pre-qualify with Affirm</a>
       </div>
       <div class="fincard">
         <div class="fincard__logo"><span class="lender lender--katapult"><img src="images/katapult-logo.png" alt="Katapult"></span></div>
@@ -176,7 +177,7 @@
           Katapult's lease-to-own option gets the parts on your truck for as low as $1 down, with a decision
           in seconds and no credit required. It's built for buyers who are still establishing or rebuilding credit.
         </p>
-        <a class="btn btn--primary" href="https://www.customwheeloffset.com/" target="_blank" rel="noopener">Pre-qualify with Katapult</a>
+        <a class="btn btn--primary" href="https://www.customwheeloffset.com/financing" target="_blank" rel="noopener" data-lender="katapult">Pre-qualify with Katapult</a>
       </div>
     </div>
     <p class="finnote">Your rate will be 0% APR or 10 to 36% APR based on credit, and is subject to an eligibility check. Payment options through Affirm are provided by these lending partners: <a href="https://www.affirm.com/lenders" target="_blank" rel="noopener">affirm.com/lenders</a>. Options depend on your purchase amount, and a down payment may be required. Katapult is a lease-to-own program with its own terms, not a loan. Learn more about payment options at Custom Offsets.</p>
@@ -197,14 +198,14 @@
         Every part that went on the F-350, grouped the way they went on the truck; filter by category
         to see one group at a time.
       </p>
-      <div class="ptabs" role="tablist" aria-label="Parts categories">
-        <button class="ptab" role="tab" aria-selected="true" data-cat="all">All Parts</button>
-        <button class="ptab" role="tab" aria-selected="false" data-cat="susp">Suspension</button>
-        <button class="ptab" role="tab" aria-selected="false" data-cat="wt">Wheels &amp; Tires</button>
-        <button class="ptab" role="tab" aria-selected="false" data-cat="ext">Exterior</button>
-        <button class="ptab" role="tab" aria-selected="false" data-cat="light">Lighting</button>
-        <button class="ptab" role="tab" aria-selected="false" data-cat="int">Interior</button>
-        <button class="ptab" role="tab" aria-selected="false" data-cat="perf">Performance</button>
+      <div class="ptabs" role="group" aria-label="Filter parts by category">
+        <button class="ptab" type="button" aria-pressed="true" data-cat="all">All Parts</button>
+        <button class="ptab" type="button" aria-pressed="false" data-cat="susp">Suspension</button>
+        <button class="ptab" type="button" aria-pressed="false" data-cat="wt">Wheels &amp; Tires</button>
+        <button class="ptab" type="button" aria-pressed="false" data-cat="ext">Exterior</button>
+        <button class="ptab" type="button" aria-pressed="false" data-cat="light">Lighting</button>
+        <button class="ptab" type="button" aria-pressed="false" data-cat="int">Interior</button>
+        <button class="ptab" type="button" aria-pressed="false" data-cat="perf">Performance</button>
       </div>
     </div>
 
@@ -215,7 +216,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-lift.jpg" alt="ReadyLift 4 inch coil spring lift kit with Falcon 2.1 shocks" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">ReadyLift</div>
-          <div class="pcard__t">4" Coil Spring Lift Kit w/ Falcon 2.1</div>
+          <h3 class="pcard__t">4" Coil Spring Lift Kit w/ Falcon 2.1</h3>
           <p class="pcard__p">Four inches of coil spring lift with Falcon 2.1 shocks and new radius arms. The radius arms are the part that matters: they put the front axle back where the geometry wants it instead of leaving it hanging at an angle.</p>
           <div class="pcard__price pcard__price--top num">$2,399.95</div>
           <div class="pcard__acts">
@@ -229,7 +230,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-steering.jpg" alt="Kryptonite Death Grip steering kit" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Kryptonite</div>
-          <div class="pcard__t">Death Grip Steering Kit</div>
+          <h3 class="pcard__t">Death Grip Steering Kit</h3>
           <p class="pcard__p">A complete steering linkage for the Super Duty: tie rods, drag link and a steering stabilizer. Factory linkage on these trucks develops play, and play turns into wander once there are bigger wheels and tires involved.</p>
           <div class="pcard__price pcard__price--top num">$1,735.99</div>
           <div class="pcard__acts">
@@ -243,7 +244,7 @@
         <div class="pcard__img"><img src="images/part-wheels.jpg" alt="Method MR709 HD wheel and Toyo Open Country R/T Trail tire on the truck" loading="lazy" style="object-position:50% 46%"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Method &amp; Toyo Tires</div>
-          <div class="pcard__t">MR709 HD 18x9 &amp; Open Country R/T Trail 37x12.50R18</div>
+          <h3 class="pcard__t">MR709 HD 18x9 &amp; Open Country R/T Trail 37x12.50R18</h3>
           <p class="pcard__p">The wheel and the tire bought together, mounted and balanced before it ships. Buying the pair as a package is how you avoid a load rating or backspacing surprise after the fact, and mount and balance comes with it.</p>
           <div class="pcard__price pcard__price--top num">$3,745.80<s>$4,189.00</s></div>
           <div class="pcard__acts">
@@ -257,7 +258,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-wheel.jpg" alt="Method MR709 HD 18x9 machined wheel" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Method Race Wheels</div>
-          <div class="pcard__t">MR709 HD 18x9 +12, Machined</div>
+          <h3 class="pcard__t">MR709 HD 18x9 +12, Machined</h3>
           <p class="pcard__p">Machined with a clear coat and a bead grip, in the 8x170 pattern that is exclusive to Ford heavy duty. Rated at 4,500 lb a corner, which is the number that matters on a truck that loads to the sticker.</p>
           <div class="pcard__price pcard__price--top num">$1,692.80<s>$2,116.00</s></div>
           <div class="pcard__acts">
@@ -271,7 +272,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-tire.jpg" alt="Toyo Open Country R/T Trail tire" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Toyo Tires</div>
-          <div class="pcard__t">Open Country R/T Trail 37x12.50R18LT</div>
+          <h3 class="pcard__t">Open Country R/T Trail 37x12.50R18LT</h3>
           <p class="pcard__p">A hybrid between an all terrain and a mud terrain, 128Q load rated with a 45,000 mile warranty. Going to a 37 is what the lift bought room for, and this is the tread that does it without making the cab unbearable on the highway.</p>
           <div class="pcard__price pcard__price--top num">$2,073.00</div>
           <div class="pcard__acts">
@@ -285,7 +286,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-rearbumper.jpg" alt="Body Armor 4x4 Ambush rear bumper" loading="lazy" data-slot="rear"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Body Armor 4x4</div>
-          <div class="pcard__t">Eco Series Front Winch Bumper</div>
+          <h3 class="pcard__t">Eco Series Front Winch Bumper</h3>
           <p class="pcard__p">A welded plate steel front bumper built around a winch mount, for 17-19 Super Duty. It replaces plastic over thin steel with something that can take a hit and pull from it.</p>
           <div class="pcard__price pcard__price--top num">$1,476.45<s>$1,737.00</s></div>
           <div class="pcard__acts">
@@ -299,7 +300,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-ambush.jpg" alt="Body Armor 4x4 Eco Series front winch bumper" loading="lazy" data-slot="front"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Body Armor 4x4</div>
-          <div class="pcard__t">Ambush Rear Bumper</div>
+          <h3 class="pcard__t">Ambush Rear Bumper</h3>
           <p class="pcard__p">A steel rear bumper for 17-22 Super Duty. The factory plastic rear step is the first thing to bend when a trailer gets away from you.</p>
           <div class="pcard__price pcard__price--top num">$923.95<s>$1,087.00</s></div>
           <div class="pcard__acts">
@@ -313,7 +314,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-winch.jpg" alt="Rough Country 13,000 lb Torque winch on synthetic rope" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Rough Country</div>
-          <div class="pcard__t">13,000 lb Torque Winch</div>
+          <h3 class="pcard__t">13,000 lb Torque Winch</h3>
           <p class="pcard__p">A 13,000 lb winch on synthetic rope. Synthetic weighs less than cable, does not store energy the same way if it lets go, and is the reason a winch is worth running on a work truck.</p>
           <div class="pcard__price pcard__price--top num">$899.95</div>
           <div class="pcard__acts">
@@ -327,7 +328,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-lightbar.jpg" alt="Diode Dynamics SS30 light bar" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Lighting</div>
-          <div class="pcard__t">Front Bumper Light Bar</div>
+          <h3 class="pcard__t">Front Bumper Light Bar</h3>
           <p class="pcard__p">A light bar mounted in the front bumper opening. Bumper mounting keeps it out of the windshield reflection and off the roofline, where the wind noise lives.</p>
           <div class="pcard__price pcard__price--top num">$799.95</div>
           <div class="pcard__acts">
@@ -340,7 +341,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-fog-white.jpg" alt="Diode Dynamics SS3 Pro pods, white" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Lighting</div>
-          <div class="pcard__t">Front Bumper Fog Lights, Outer</div>
+          <h3 class="pcard__t">Front Bumper Fog Lights, Outer</h3>
           <p class="pcard__p">The outer pair in the bumper. Fog lights sit low on purpose, under the layer of fog or dust that a high-mounted light just reflects back at you.</p>
           <div class="pcard__price pcard__price--top num">$599.95</div>
           <div class="pcard__acts">
@@ -353,7 +354,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-fog-amber.jpg" alt="Diode Dynamics SS3 Pro pods, amber" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Lighting</div>
-          <div class="pcard__t">Front Bumper Fog Lights, Inner</div>
+          <h3 class="pcard__t">Front Bumper Fog Lights, Inner</h3>
           <p class="pcard__p">The inner pair, running in tandem with the headlights. Pairing them to the factory fog light switch gives an added boost to the lighting range for nighttime driving.</p>
           <div class="pcard__price pcard__price--top num">$599.95<em>each</em></div>
           <div class="pcard__acts">
@@ -366,7 +367,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-headlights.jpg" alt="AlphaRex LUXX series LED projector headlights, chrome" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Lighting</div>
-          <div class="pcard__t">Headlights</div>
+          <h3 class="pcard__t">Headlights</h3>
           <p class="pcard__p">Replacement headlight housings for the Super Duty. Twenty years of UV is not the issue on a 2019; the issue is that the factory housing was built to a price.</p>
           <div class="pcard__price pcard__price--top num">$935.00</div>
           <div class="pcard__acts">
@@ -380,7 +381,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-bedcover.jpg" alt="BAK Revolver X4ts hard roll-up tonneau cover on T-slot rails" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">BAK Industries</div>
-          <div class="pcard__t">Revolver X4ts Bed Cover</div>
+          <h3 class="pcard__t">Revolver X4ts Bed Cover</h3>
           <p class="pcard__p">A hard roll-up tonneau on T-slot rails. It rolls back for tall loads and locks flat for everything else, which is the compromise a folding cover does not make.</p>
           <div class="pcard__price pcard__price--top num">$1,779.99</div>
           <div class="pcard__acts">
@@ -394,7 +395,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-rack.jpg" alt="RealTruck Elevate truck rack over a roll-up bed cover" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">RealTruck</div>
-          <div class="pcard__t">Elevate Truck Rack</div>
+          <h3 class="pcard__t">Elevate Truck Rack</h3>
           <p class="pcard__p">An adjustable rack that clamps to the bed rails and sits over the cover, so ladders and lumber ride above a bed that is still locked and dry. The crossbars slide and the uprights drop out when you do not need them.</p>
           <div class="pcard__price pcard__price--top num">$999.99</div>
           <div class="pcard__acts">
@@ -407,7 +408,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-boards.jpg" alt="GEN-Y running boards" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">GEN-Y</div>
-          <div class="pcard__t">Running Boards</div>
+          <h3 class="pcard__t">Running Boards</h3>
           <p class="pcard__p">Boards down each side of the cab. The taller the truck, the more the first step up decides who is willing to ride in it.</p>
           <div class="pcard__price pcard__price--top num">$699.95</div>
           <div class="pcard__acts">
@@ -420,7 +421,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-hitch.jpg" alt="GEN-Y Boss Torsion-Flex 21K drop hitch" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">GEN-Y</div>
-          <div class="pcard__t">Boss Torsion-Flex 21K Drop Hitch</div>
+          <h3 class="pcard__t">Boss Torsion-Flex 21K Drop Hitch</h3>
           <p class="pcard__p">A 2.5 inch receiver with a 9 inch drop and five adjustable positions, dual ball mount and pintle lock included. It brings the ball back down to the coupler after the lift; towing nose high puts the load on the rear axle of the trailer and takes weight off your steer tires.</p>
           <div class="pcard__price pcard__price--top num">$979.95</div>
           <div class="pcard__acts">
@@ -434,7 +435,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-hitchstep.jpg" alt="GEN-Y Phantom XL hitch step" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">GEN-Y</div>
-          <div class="pcard__t">Phantom XL Hitch Step</div>
+          <h3 class="pcard__t">Phantom XL Hitch Step</h3>
           <p class="pcard__p">A serrated heavy duty step that lives in the receiver. It is the easiest way to reach the middle of the bed on a truck sitting this tall.</p>
           <div class="pcard__price pcard__price--top num">$279.95</div>
           <div class="pcard__acts">
@@ -447,7 +448,7 @@
         <div class="pcard__img pcard__img--product"><img src="https://images.customwheeloffset.com/buy2/web/105325-1-weathertech-hp-grey-front-floorliner-supercrew-cab-17-22-ford-f-250-350-450.jpg" alt="WeatherTech HP Grey Front FloorLiner" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">WeatherTech</div>
-          <div class="pcard__t">HP Grey Front FloorLiner</div>
+          <h3 class="pcard__t">HP Grey Front FloorLiner</h3>
           <p class="pcard__p">Full coverage up front, cut for the SuperCrew cab. On a work truck this is the single part standing between the carpet and whatever is on the jobsite.</p>
           <div class="pcard__price pcard__price--top num">$155.95</div>
           <div class="pcard__acts">
@@ -461,7 +462,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-liner-rear.jpg" alt="WeatherTech Grey Rear FloorLiner HP" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">WeatherTech</div>
-          <div class="pcard__t">Grey Rear FloorLiner HP</div>
+          <h3 class="pcard__t">Grey Rear FloorLiner HP</h3>
           <p class="pcard__p">The back half, cut around the first row bench and the under seat storage. Rear footwells take the mud that walks in on somebody else's boots.</p>
           <div class="pcard__price pcard__price--top num">$126.95</div>
           <div class="pcard__acts">
@@ -475,7 +476,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-seatcovers.jpg" alt="Carhartt SeatSaver custom seat covers in gravel" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">Interior</div>
-          <div class="pcard__t">Seat Covers</div>
+          <h3 class="pcard__t">Seat Covers</h3>
           <p class="pcard__p">A made-to-order set cut for the XLT seats. Made to order means a lead time, so this is the part to order first and install last.</p>
           <div class="pcard__price pcard__price--top num">$887.25</div>
           <div class="pcard__acts">
@@ -488,7 +489,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-reardiff.jpg" alt="aFe Power Pro Series rear differential cover" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">aFe Power</div>
-          <div class="pcard__t">Pro Series Rear Differential Cover</div>
+          <h3 class="pcard__t">Pro Series Rear Differential Cover</h3>
           <p class="pcard__p">A finned aluminum rear cover for 17-23 Ford diesel. More fluid and more surface area, which is what keeps gear oil in range on a long grade with a trailer behind you.</p>
           <div class="pcard__price pcard__price--top num">$370.00</div>
           <div class="pcard__acts">
@@ -502,7 +503,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-dana60.jpg" alt="aFe Power Pro Series Dana 60 front differential cover" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">aFe Power</div>
-          <div class="pcard__t">Pro Series Dana 60 Front Cover</div>
+          <h3 class="pcard__t">Pro Series Dana 60 Front Cover</h3>
           <p class="pcard__p">The front half of the same idea, for the Dana 60. Front diff temperature is the one nobody watches until something starts whining.</p>
           <div class="pcard__price pcard__price--top num">$354.00</div>
           <div class="pcard__acts">
@@ -516,7 +517,7 @@
         <div class="pcard__img pcard__img--product"><img src="images/prod-brakes.jpg" alt="PowerStop Z36 Truck &amp; Tow brake kit" loading="lazy"></div>
         <div class="pcard__body">
           <div class="pcard__brand">PowerStop</div>
-          <div class="pcard__t">Z36 Truck &amp; Tow Brake Kit, Front and Rear</div>
+          <h3 class="pcard__t">Z36 Truck &amp; Tow Brake Kit, Front and Rear</h3>
           <p class="pcard__p">Pads and rotors for all four corners, SRW only. An F-350 on bigger tires asks more of the brakes before it asks anything of the engine, which is why this one goes on before anything that adds power.</p>
           <div class="pcard__price pcard__price--top num">$975.21</div>
           <div class="pcard__acts">
@@ -532,7 +533,7 @@
     </div>
 
     <div class="pager rv" id="pager" hidden>
-      <div class="pager__info">Page <b id="pgNow">1</b> of <b id="pgTotal">1</b> <span id="pgCount"></span></div>
+      <div class="pager__info" aria-live="polite">Page <b id="pgNow">1</b> of <b id="pgTotal">1</b> <span id="pgCount"></span></div>
       <div class="pager__dots" id="pgDots"></div>
     </div>
 

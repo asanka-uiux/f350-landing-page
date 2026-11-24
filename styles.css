@@ -53,6 +53,13 @@ h2.display{font-size:clamp(2.1rem,4.4vw,3.6rem)}
 .btn--ghost:hover{border-color:var(--red);color:#fff;background:rgba(206,17,38,.1)}
 .btn--wide{width:100%}
 
+/* ---------- focus ----------
+   One clear ring for every link and control: 2px white, offset so it sits on the
+   page, not on the red or white fill of the button. White on the near-black page
+   is 19:1. The category tiles and banner keep their own red rings (see below). */
+:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.pcard__acts a:focus-visible,.bcard:focus-visible{outline-offset:2px}
+
 /* ---------- skip link ---------- */
 .skip{position:absolute;left:12px;top:-100px;z-index:300;background:#fff;color:#0A0A0B;font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;border-radius:var(--r);text-decoration:none}
 .skip:focus{top:12px}
@@ -140,7 +147,7 @@ h1.display .l2{display:block;color:var(--red-hot)}
   -webkit-tap-highlight-color:transparent;
   /* nearest to the hero sits full size, the ones behind it step back */
   transform:scale(calc(1 - (var(--d) - 1) * .095));
-  opacity:calc(1 - (var(--d) - 1) * .26);
+  opacity:max(.45, calc(1 - (var(--d) - 1) * .26));
   transition:opacity .25s ease;
   animation:tileIn .44s cubic-bezier(.2,.7,.3,1) backwards;
   animation-delay:calc((var(--d) - 1) * 55ms);
@@ -339,7 +346,7 @@ h1.display .l2{display:block;color:var(--red-hot)}
 .ptabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;padding-bottom:26px;border-bottom:1px solid var(--line-2)}
 .ptab{font-family:'Oswald',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:11px 18px;border:1px solid var(--line);border-radius:var(--r);color:var(--muted);transition:all .2s}
 .ptab:hover{color:#fff;border-color:var(--red)}
-.ptab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.ptab[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
 .wrap--wide{max-width:var(--wide);padding:0 16px}
 
 /* carousel: on phones the arrows sit in one row under the cards */
@@ -667,6 +674,14 @@ h1.display .l2{display:block;color:var(--red-hot)}
   .pcard__acts a{font-size:.74rem}
   .byline{font-size:.72rem}
   .label{font-size:.72rem}
+}
+
+/* very narrow phones (360px and below): logo and nav button fit on one line
+   (at 320px the button ran 10px off-screen) */
+@media(max-width:360px){
+  .brand img{height:18px}
+  .nav__in{gap:12px}
+  .nav__cta{padding:10px 12px;letter-spacing:.1em}
 }
 
 /* 1041px+: desktop nav, and the full-screen hero */

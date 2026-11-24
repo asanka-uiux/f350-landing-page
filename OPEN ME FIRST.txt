@@ -11,6 +11,21 @@ HOW TO REVIEW
    why you want it and who should skip it beside it. The square tabs either side
    switch categories, arrow keys work too.
 
+UPDATED 11/24 . ACCESSIBILITY PASS (WCAG 2.2 AA)
+Every link and button now shows the same clear 2px white focus ring. Product card
+titles are headings, so each View Product / Shop link has context for screen readers.
+The parts filter is a set of on/off buttons (it was a half-built tab widget), and the
+"Page 1 of 4 . 23 parts" count is announced when a filter changes. The faded category
+tiles no longer fade past readable. The top nav is labelled Main. At 320px wide, the
+Shop the Build button no longer runs off the screen.
+
+UPDATED 11/24 . FINANCING POP-UP
+Pre-qualify with Affirm and Pre-qualify with Katapult now close our pop-up and open
+the lender's own pre-approval window in the same tab, wired the same way as
+customwheeloffset.com/financing and using the store's public Affirm and Katapult keys.
+If a lender's script can't load (ad blocker, network), the button opens
+customwheeloffset.com/financing in a new tab instead.
+
 UPDATED 11/24 . FEEDBACK ROUND (Trayc)
 The headlights card has a red View Product button above Shop Lighting, linking to the
 AlphaRex LUXX MKII product page with this truck's fitment already selected. Our site

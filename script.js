@@ -452,6 +452,50 @@
     if (e.key === 'Escape' && finModal.classList.contains('on')) closeFin();
   });
 
+  /* ============ LENDER PRE-APPROVAL WINDOWS ============
+     The same wiring as customwheeloffset.com/financing, with the store's
+     public keys: Affirm opens its pre-qualification window from an
+     .affirm-site-modal element, Katapult from katapult.preapprove().
+     Clicking a lender button closes our pop-up and opens theirs in this
+     tab. If a lender script has not loaded (ad blocker, network, domain
+     not allowed), the link falls through to /financing in a new tab. */
+  var LENDERS = {
+    affirm:   { key: 'ZSPHUDGDEU88IJ3O', script: 'https://cdn1.affirm.com/js/v2/affirm.js' },
+    katapult: { key: 'ae77ed6a34c43e912740a7040ca37ddd5b161fee', env: 'https://katapult.com' }
+  };
+  var lenderReady = { affirm: false, katapult: false };
+
+  // Affirm's standard loader (queues calls until affirm.js arrives)
+  window._affirm_config = { public_api_key: LENDERS.affirm.key, script: LENDERS.affirm.script };
+  (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,window._affirm_config,"affirm","checkout","ui","script","ready");
+  window.affirm.ui.ready(function(){ lenderReady.affirm = true; });
+
+  // Katapult's plugin script + stylesheet; setConfig fires katapultjs-init
+  document.addEventListener('katapultjs-init', function(){ lenderReady.katapult = true; });
+  (function(){
+    window.katapult = window.katapult || {};
+    var sc = document.createElement('script');
+    sc.async = true;
+    sc.src = LENDERS.katapult.env + '/plugin/js/katapult.js';
+    sc.onload = function(){ if (window.katapult.setConfig) window.katapult.setConfig(LENDERS.katapult.key); };
+    document.head.appendChild(sc);
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = LENDERS.katapult.env + '/plugin/css/katapult.css';
+    document.head.insertBefore(css, document.head.firstChild);
+  })();
+
+  [].slice.call(finModal.querySelectorAll('[data-lender]')).forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      var who = btn.getAttribute('data-lender');
+      if (!lenderReady[who]) return;            // not loaded: let the link open /financing
+      e.preventDefault();
+      closeFin();
+      if (who === 'affirm') el('affirmTrigger').click();
+      else window.katapult.preapprove();
+    });
+  });
+
   /* ============ PARTS CATEGORY TABS ============ */
   var ptabs = [].slice.call(document.querySelectorAll('.ptab'));
   var pcards = [].slice.call(document.querySelectorAll('.pcard'));
@@ -501,7 +545,7 @@
 
   ptabs.forEach(function(t){
     t.addEventListener('click', function(){
-      ptabs.forEach(function(x){ x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+      ptabs.forEach(function(x){ x.setAttribute('aria-pressed', x === t ? 'true' : 'false'); });
       // on phones the tabs are one swipeable row: bring the picked tab to the middle
       var row = t.parentElement;
       if (row.scrollWidth > row.clientWidth){
