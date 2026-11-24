@@ -1,0 +1,62 @@
+2019 FORD F-350 XLT 6.7L . WORK TRUCK LANDING PAGE
+Custom Offsets . November build
+
+HOW TO REVIEW
+1. Unzip this folder somewhere, keeping index.html, styles.css, script.js and the
+   images folder together.
+2. Double click index.html. It opens in any browser. No server, no install.
+3. The category section in the middle is interactive. The big tab is the broadcast
+   banner itself: brands in the red bar, the name of the category under it. Click it
+   and the panel below opens: the four checked specs in a row, then the photo with
+   why you want it and who should skip it beside it. The square tabs either side
+   switch categories, arrow keys work too.
+
+UPDATED 11/24 . LATEST ROUND
+The Lighting category lost the "Front & Rear" and is just LIGHTING now. The rear
+floor liner card has its real product shot. The Boss hitch turned out to be on our
+own site after all, 81968, at the same $979.95, so that card now links to our product
+page. The three links you sent for the WeatherTech liners and the PowerStop kit now
+carry the year, make, model, trim and drive, so each product page opens with this
+truck already selected. The RealTruck Elevate rack went in at $999.99, in the bed
+cover category beside the BAK; our site returns nothing for it, so it links at
+category level. The build story headline is now BUILDING A WORK TRUCK / THE RIGHT WAY.
+
+The Falcon shock and ReadyLift radius arm shot is in as the Lift & Steering photo,
+cropped so both brand marks read.
+
+EARLIER ON 11/24
+Every product card has a photo and a price. All eight category panels have a photo.
+The hero, the build story background and the full bleed closer are all in.
+
+The two bumper shots swapped, so the front card carries what was on the rear card and
+the new 59139 image is on the rear card.
+
+The three GEN-Y prices came off GEN-Y's own pages, from the exact variant in each
+link: running boards $699.95, Boss Torsion-Flex 21K drop hitch $979.95, Phantom XL
+hitch step $279.95. No averaging was needed, every link pointed at one variant. That
+closes the towing subtotal at $1,959.85. The cards still link at Custom Offsets
+category level, since our site does not carry those three.
+
+The second FAQ answer lost its last sentence and the TK_FITMENT placeholder with it.
+
+WHAT IS STILL OPEN
+One thing, an ID rather than a decision:
+  . The YouTube video ID.
+The three blog cards are filled in (11/24): Best Performance Mods for Your Ford F-350,
+Common Issues with the Ford F-350 Super Duty, and What Are the Best Trucks to Build?,
+each with its feature photo, date and link. See all blogs now goes to the blog index.
+
+One to check: the two fog light pods. The white SS3 Pro pair is on the outer card and
+the amber pair on the inner. If that is backwards it is a one line fix.
+
+One photo is still unplaced: the KRFDSS05 Kryptonite dual steering stabilizer. There
+is no card for the stabilizer on its own, since it is part of the Death Grip kit, and
+that card uses the linkage shot. Say the word if it should be its own card.
+
+WATCH THE PRICES
+The Method wheel and both Body Armor bumpers are on Black Friday pricing and will go
+back up when the sale ends. GEN-Y was running a Torsion-Flex promo too, and the three
+prices above are list, not promo. RESEARCH.md has every struck-through price and the
+four places our site disagrees with the build sheet.
+
+Questions go back to this thread.
